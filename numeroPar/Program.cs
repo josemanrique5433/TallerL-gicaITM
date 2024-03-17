@@ -4,6 +4,8 @@
     {
         String numberString = String.Empty;
         do
+           
+
         {
             Console.Write("Digite un número entero ó la palabra 'Salir' para salir: ");
             numberString = (Console.ReadLine());
