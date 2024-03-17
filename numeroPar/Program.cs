@@ -1,48 +1,25 @@
-﻿internal class Program
+﻿using Shared;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        String numberString = String.Empty;
+     
+        var number = 0;
         do
-           
-
         {
-            Console.Write("Digite un número entero ó la palabra 'Salir' para salir: ");
-            numberString = (Console.ReadLine());
-            if (numberString!.ToLower() == "salir")
-            {
-                continue;
-            }
+           number = ConsolExtension.GetIn("Digite un número entero ó 0 para salir: ");
+           if (number % 2 == 0)
+           {
 
-
-            var numenerInt = 0;
-            if (int.TryParse(numberString, out numenerInt))
-            {
-                if (numenerInt % 2 == 0)
-                {
-
-                    Console.WriteLine($" El número {numenerInt} es par");
-                }
-                else
-                {
-                    Console.WriteLine($"El número {numenerInt} es impar");
-                }
-
-            }
-            else
-            {
-                Console.WriteLine($"Lo que ingresaste: {numberString} no es un número entero");
-            }
-
-
-
-
-
-        } while (numberString!.ToLower() != "salir");
-
+            Console.WriteLine($" El número {number} es par");
+           }
+           else
+           {
+           Console.WriteLine($"El número {number} es impar");
+           }         
+        } while (number != 0);
         Console.WriteLine("Game Over");
-
-
 
     }
 }
